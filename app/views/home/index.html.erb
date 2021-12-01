@@ -1,1 +1,14 @@
-teste
+<h1>Bem vindo ao Task On Rails</h1>
+<h3>Seu gerenciador de tarefas</h3>
+
+<%= link_to 'Nova tarefa', new_task_path %> 
+<br />
+<br />
+
+<% @tasks.each do | element | %>
+<%= element.description %>
+<%= link_to 'Editar', edit_task_path(element) %>
+<%= link_to 'Apagar', task_path(element), method: :delete,
+    data: { confirm: 'Quer apagar esta tarefa?' } %>
+<br />
+<% end %>
