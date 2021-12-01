@@ -1,7 +1,15 @@
+<h1>Editando a tarefa <%= @task.description %> </h1>
+
 <%= form_for @task do |f| %>
   <%= f.label :description, 'Descrição' %>
   <%= f.text_field :description %>
+  <br />
   <%= f.label :status, 'Status' %>
   <%= f.check_box :status %>
+  <br />
   <%= f.submit 'Editar' %>
 <% end %>
+
+<br />
+
+<%= link_to "Voltar", root_path %>
